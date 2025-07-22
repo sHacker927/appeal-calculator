@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+<h1>Mog Calculator</h1>
+</div>
+
+<div class="section" id="skillSection">
+<p1>Skills/Hobbies</p1>
+<br>
+
+<label for="creativeSkill">Creative:</label><br>
+<input type="range" min="0" max="10"id="creativeSkill" oninput="main()"><br>
+<p1 id="creativeValue">...</p1><br><br>
+
+<label for="physicalSkill">Physical:</label><br>
+<input type="range" min="0" max="10" id="physicalSkill" oninput="main()"><br>
+<p1 id="physicalValue">...</p1><br><br>
+
+<label for="socialSkill">Social:</label><br>
+<input type="range" min="0" max="10" id="socialSkill" oninput="main()"><br>
+<p1 id="socialValue">...</p1><br><br>
+
+<label for="intellectualSkill">Intellectual:</label><br>
+<input type="range" min="0" max="10" id="intellectualSkill" oninput="main()"><br>
+<p1 id="intellectualValue">...</p1><br><br>
+<br>
+</div>
+
+<p1>Height</p1><br><br>
+
+<label for="unit">Unit:</label>
+<select name="unit" id="unit">
+    <option value="centimeter">Centimeter</option>
+    <option value="inches">Inches</option>
+</select><br>
+
+<input type="number" id="heightScore" value="height" onchange="main()"><br><br>
+
+<p1>Intelligence</p1><br>
+<input type="number" id="intelligenceScore"value="intelligence" min="1" max="10" onchange="main()"><br><br>
+
+<p1>Physique</p1><br>
+<input type="number" id="physiqueScore"value="physique" min="1" max="10" onchange="main()"><br><br>
+
+<p1>Face Card</p1><br>
+<input type="number" id="faceScore"value="face" min="1" max="10" onchange="main()"><br><br>
+
+<button onclick="main()">Submit</button><br><br>
+
+<p1>Scale:</p1>
+<select name="scale" id="scale">
+    <option value="10 scale">10</option>
+    <option value="percent">Percent</option>
+</select><br>
+
+<p1>Your score is:</p1>
+<h1 id="final">...</h1>
+<h2 id="category">...</h1>
+
+</body>
+</html>
