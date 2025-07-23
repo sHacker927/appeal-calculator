@@ -10,33 +10,36 @@ body {
 }
 
 .slider{
+    -webkit-appearance:none;
     width:95%;
 }
 
 .slider::-moz-range-track {
-  height: 30px;
-  width: 98%;
-  background: #aa0486;
-  border-radius:10px
+    height: 30px;
+    background: #aa0486;
+    border-radius:30px
 }
 .slider::-webkit-slider-runnable-track {
-  height: 30px;
-  width: 98%;
-  background: #aa0486;
-  border-radius:10px
+    -webkit-appearance:none;
+    height: 30px;
+    width: 95%;
+    background: #aa0486;
+    border-radius:30px
 }
 
 .slider::-moz-range-thumb {
-  height: 50px;
-  width: 50px;
-  background: #04AA6D;
-  border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: #04AA6D;
+    border-radius: 50%;
 }
 .slider::-webkit-slider-thumb {
-  height: 50px;
-  width: 50px;
-  background: #04AA6D;
-  border-radius: 50%;
+   -webkit-appearance: none;
+    margin-top:-10px;
+   height: 50px;
+   width: 50px;
+   background: #04AA6D;
+   border-radius: 50%;
 }
 
 input[type="number"]{
