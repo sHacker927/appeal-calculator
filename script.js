@@ -1,12 +1,13 @@
 function main(){
-    let face = document.getElementById("faceScore").value
-
+    let face = parseFloat(document.getElementById("faceScore").value)
+    face=updateLimits(face,"faceScore",0,10)
+    console.log(face)
 
     let height = heightCalc()
 
 
-    let physique=document.getElementById("physiqueScore").value
-
+    let physique=parseFloat(document.getElementById("physiqueScore").value)
+    physique=updateLimits(physique,"physiqueScore",0,10)
 
     let skills=skillCalc()
 
@@ -36,7 +37,7 @@ function main(){
 }
 
 function finalCalc(intelligence,skills,physique,height,face){
-    let final = .15*intelligence+.2*physique+.15*height+.25*face+.25*skills
+    let final = .25*physique+.2*height+.3*face+.25*skills
     return final
 }
 
@@ -91,12 +92,14 @@ function intelligenceCalc(){
 }
 
 function skillCalc(){
-    totalScore=0
-    skillCheck=[document.getElementById("practicalSkill").value,document.getElementById("socialSkill").value,document.getElementById("creativeSkill").value,document.getElementById("physicalSkill").value,document.getElementById("intellectualSkill").value]
+    let totalScore=0
+    let skillCheck=[document.getElementById("practicalSkill").value,document.getElementById("socialSkill").value,document.getElementById("creativeSkill").value,document.getElementById("physicalSkill").value,document.getElementById("intellectualSkill").value]
 
     for(let i=0;i<skillCheck.length;i++){
-        totalScore+= (-Math.sqrt(20**2-(skillCheck[i])**2)+20)/10
+        let cur=(5*(Math.sin((Math.PI/20)*(skillCheck[i]-10)))+5)/5
+        totalScore+=cur 
     }
+    console.log("Skill Score: "+totalScore)
     return totalScore
 }
 
@@ -140,4 +143,14 @@ function updateSliders(){
     document.getElementById("physicalValue").textContent=document.getElementById("physicalSkill").value/2
     document.getElementById("socialValue").textContent=document.getElementById("socialSkill").value/2
     document.getElementById("intellectualValue").textContent=document.getElementById("intellectualSkill").value/2
+}
+
+function updateLimits(x,docID,min,max){
+    if(x<min){
+        x=min
+    }else if(x>max){
+        x=max
+    }
+    document.getElementById(docID).value=x
+    return x
 }
