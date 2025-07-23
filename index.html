@@ -10,23 +10,35 @@
 </div>
 
 <div class="section" id="skillSection">
-<p1>Skills/Hobbies</p1>
+<p1>Skills/Hobbies, rank by how skilled you are in hobbies/skills of these categories</p1>
 <br>
+<ul>
+    <li>0-no experience</li>
+    <li>1-2:low level knowledge</li>
+    <li>3-5: basic ropes</li>
+    <li>6-7:seasoned</li>
+    <li>8-9:really good</li>
+    <li>10: professional</li>
+</ul><br>
+
+<label for="practicalSkill">Practical:</label><br>
+<input type="range" class="slider" min="0" max="20"id="practicalSkill" oninput="main()"><br>
+<p1 id="practicalValue">...</p1><br><br>
 
 <label for="creativeSkill">Creative:</label><br>
-<input type="range" min="0" max="10"id="creativeSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20"id="creativeSkill" oninput="main()"><br>
 <p1 id="creativeValue">...</p1><br><br>
 
 <label for="physicalSkill">Physical:</label><br>
-<input type="range" min="0" max="10" id="physicalSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="physicalSkill" oninput="main()"><br>
 <p1 id="physicalValue">...</p1><br><br>
 
 <label for="socialSkill">Social:</label><br>
-<input type="range" min="0" max="10" id="socialSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="socialSkill" oninput="main()"><br>
 <p1 id="socialValue">...</p1><br><br>
 
 <label for="intellectualSkill">Intellectual:</label><br>
-<input type="range" min="0" max="10" id="intellectualSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="intellectualSkill" oninput="main()"><br>
 <p1 id="intellectualValue">...</p1><br><br>
 <br>
 </div>
@@ -39,21 +51,19 @@
     <option value="inches">Inches</option>
 </select><br>
 
-<input type="number" id="heightScore" value="height" onchange="main()"><br><br>
+<input type="number" id="heightScore" value="height" oninput="main()"><br><br>
 
-<p1>Intelligence</p1><br>
-<input type="number" id="intelligenceScore"value="intelligence" min="1" max="10" onchange="main()"><br><br>
 
 <p1>Physique</p1><br>
 <input type="number" id="physiqueScore"value="physique" min="1" max="10" onchange="main()"><br><br>
 
 <p1>Face Card</p1><br>
 <input type="number" id="faceScore"value="face" min="1" max="10" onchange="main()"><br><br>
+<br>
 
-<button onclick="main()">Submit</button><br><br>
 
 <p1>Scale:</p1>
-<select name="scale" id="scale">
+<select name="scale" id="scale" oninput="main()">
     <option value="10 scale">10</option>
     <option value="percent">Percent</option>
 </select><br>
