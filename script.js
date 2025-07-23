@@ -37,7 +37,7 @@ function main(){
 }
 
 function finalCalc(intelligence,skills,physique,height,face){
-    let final = .25*physique+.2*height+.3*face+.25*skills
+    let final = .15*intelligence+.2*physique+.15*height+.25*face+.25*skills
     return final
 }
 
@@ -84,9 +84,9 @@ function intelligenceCalc(){
 
     finalScore+=.15*skills[0]
     finalScore+=.25*skills[1]
-    finalScore+=.05*skills[2]
+    finalScore+=.15*skills[2]
     finalScore+=.2*skills[3]
-    finalScore+=.35*skills[4]
+    finalScore+=.25*skills[4]
     return finalScore
 
 }
