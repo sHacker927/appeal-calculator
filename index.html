@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="header">
-<h1>Mog Calculator</h1>
+<h1>Appeal Calculator</h1>
 </div>
 
 <div class="section" id="skillSection">
@@ -22,23 +22,23 @@
 </ul><br>
 
 <label for="practicalSkill">Practical:</label><br>
-<input type="range" class="slider" min="0" max="20"id="practicalSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20"id="practicalSkill" onchange="main()"><br>
 <p1 id="practicalValue">...</p1><br><br>
 
 <label for="creativeSkill">Creative:</label><br>
-<input type="range" class="slider" min="0" max="20"id="creativeSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20"id="creativeSkill" onchange="main()"><br>
 <p1 id="creativeValue">...</p1><br><br>
 
 <label for="physicalSkill">Physical:</label><br>
-<input type="range" class="slider" min="0" max="20" id="physicalSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="physicalSkill" onchange="main()"><br>
 <p1 id="physicalValue">...</p1><br><br>
 
 <label for="socialSkill">Social:</label><br>
-<input type="range" class="slider" min="0" max="20" id="socialSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="socialSkill" onchange="main()"><br>
 <p1 id="socialValue">...</p1><br><br>
 
 <label for="intellectualSkill">Intellectual:</label><br>
-<input type="range" class="slider" min="0" max="20" id="intellectualSkill" oninput="main()"><br>
+<input type="range" class="slider" min="0" max="20" id="intellectualSkill" onchange="main()"><br>
 <p1 id="intellectualValue">...</p1><br><br>
 <br>
 </div>
@@ -51,14 +51,14 @@
     <option value="inches">Inches</option>
 </select><br>
 
-<input type="number" id="heightScore" value="height" oninput="main()"><br><br>
+<input type="number" id="heightScore" oninput="main()"><br><br>
 
 
 <p1>Physique</p1><br>
-<input type="number" id="physiqueScore"value="physique" min="1" max="10" onchange="main()"><br><br>
+<input type="number" id="physiqueScore" value="0" min="0" max="10" onchange="main()"><br><br>
 
 <p1>Face Card</p1><br>
-<input type="number" id="faceScore"value="face" min="1" max="10" onchange="main()"><br><br>
+<input type="number" id="faceScore" value="0"min="0" max="10" oninput="main()"><br><br>
 <br>
 
 
