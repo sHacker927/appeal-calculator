@@ -153,3 +153,4 @@ function updateLimits(x,docID,min,max){
     }
     document.getElementById(docID).value=x
     return x
+}
