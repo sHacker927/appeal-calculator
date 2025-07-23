@@ -1,18 +1,17 @@
 function main(){
     let face = document.getElementById("faceScore").value
-    console.log("Face: "+face)
+
 
     let height = heightCalc()
-    console.log("Height: "+ height)
+
 
     let physique=document.getElementById("physiqueScore").value
-    console.log("Physique: "+physique)
+
 
     let skills=skillCalc()
-    console.log("Skills: "+skills)
 
-    let intelligence=document.getElementById("intelligenceScore").value
-    console.log("intelligence: "+intelligence)
+
+    let intelligence=intelligenceCalc()
 
     updateSliders()
 
@@ -21,7 +20,7 @@ function main(){
     let finalCategory =category(finalScore)
 
     let scale=document.getElementById("scale").value
-    console.log("Scale: "+scale)
+
     let scaleSuffix=0
     if (scale=="percent"){
         scale=10
@@ -37,7 +36,7 @@ function main(){
 }
 
 function finalCalc(intelligence,skills,physique,height,face){
-    let final = .2*intelligence+.2*physique+.15*height+.25*face+.2*skills
+    let final = .15*intelligence+.2*physique+.15*height+.25*face+.25*skills
     return final
 }
 
@@ -57,27 +56,46 @@ function finalColor(x){
 }
 
 function category(x){
-    if(x>=9){
+    if(x>=9.3){
         return "Chad"
-    }else if(x>=8.2){
+    }else if(x>=8.5){
         return "Chad-lite"
-    }else if(x>=6.8){
+    }else if(x>=7){
         return "HTN"
-    }else if(x>=5.2){
+    }else if(x>=5.5){
         return "MTN"
     }else if(x>=3.8){
         return "LTN"
-    }else{
+    }else if(x>=19){
         return "Incel"
+    }else{
+        return "Sub3"
     }
+}
+
+function intelligenceCalc(){
+    let finalScore=0
+    let skills=[document.getElementById("practicalSkill").value,document.getElementById("creativeSkill").value,document.getElementById("physicalSkill").value,document.getElementById("socialSkill").value,document.getElementById("intellectualSkill").value]
+
+    for(let i=0;i<skills.length;i++){
+        skills[i]/=2
+    }
+
+    finalScore+=.15*skills[0]
+    finalScore+=.25*skills[1]
+    finalScore+=.05*skills[2]
+    finalScore+=.2*skills[3]
+    finalScore+=.35*skills[4]
+    return finalScore
+
 }
 
 function skillCalc(){
     totalScore=0
-    skillCheck=[document.getElementById("socialSkill").value,document.getElementById("creativeSkill").value,document.getElementById("physicalSkill").value,document.getElementById("intellectualSkill").value]
+    skillCheck=[document.getElementById("practicalSkill").value,document.getElementById("socialSkill").value,document.getElementById("creativeSkill").value,document.getElementById("physicalSkill").value,document.getElementById("intellectualSkill").value]
 
     for(let i=0;i<skillCheck.length;i++){
-        totalScore+=skillCheck[i]/4
+        totalScore+= (-Math.sqrt(20**2-(skillCheck[i])**2)+20)/10
     }
     return totalScore
 }
@@ -117,8 +135,9 @@ function heightCalc(){
 }
 
 function updateSliders(){
-    document.getElementById("creativeValue").textContent=document.getElementById("creativeSkill").value
-    document.getElementById("physicalValue").textContent=document.getElementById("physicalSkill").value
-    document.getElementById("socialValue").textContent=document.getElementById("socialSkill").value
-    document.getElementById("intellectualValue").textContent=document.getElementById("intellectualSkill").value
+    document.getElementById("practicalValue").textContent=document.getElementById("practicalSkill").value/2
+    document.getElementById("creativeValue").textContent=document.getElementById("creativeSkill").value/2
+    document.getElementById("physicalValue").textContent=document.getElementById("physicalSkill").value/2
+    document.getElementById("socialValue").textContent=document.getElementById("socialSkill").value/2
+    document.getElementById("intellectualValue").textContent=document.getElementById("intellectualSkill").value/2
 }
