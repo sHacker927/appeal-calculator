@@ -32,7 +32,7 @@ function main(){
     }
 
     console.log(finalScoreColor)
-    document.getElementById("final").innerHTML="<h1 style=\"color:"+finalScoreColor+"\";>"+scale*finalScore+scaleSuffix+"</h1>"
+    document.getElementById("final").innerHTML="<h1 style=\"color:"+finalScoreColor+"\";>"+scale*finalScore.toFixed(2)+scaleSuffix+"</h1>"
     document.getElementById("category").textContent=finalCategory
 }
 
